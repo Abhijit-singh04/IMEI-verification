@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Lato:ital@1&family=Open+Sans&family=Poppins&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="responsive-style.css">
+
+</head>
+
+<body>
+	<div class="container">
+		<div class="left"></div>
+		<div class="right">
+			<h1> IMEI Verification</h1>
+			<h2>Check your IMEI</h2>
+			<form id="login" class="form-index">
+				<input type="number" class="place-hold" autocomplete="off" id="imei"
+					placeholder="enter your IMEI number" />
+
+				<input type="submit" class="submit" value="Submit Form" />
+			</form>
+		</div>
+
+	</div>
+	<script>
+		const form = document.getElementById('login')
+		form.addEventListener('submit', login)
+
+		async function login(event) {
+			event.preventDefault()
+			const number = document.getElementById('imei').value
+			// const password = document.getElementById('password').value
+
+			const result = await fetch('/api/login', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({
+					number
+				})
+			}).then((res) => res.json())
+			console.log(result);
+			if (result.status === 'ok') {
+				// everythign went fine
+				console.log('Got the token: ', result.data)
+				localStorage.setItem('token', result.data)
+				alert(' Congratulation ! this IMEI number is valid :)')
+			} else {
+				alert(result.error)
+			}
+		}
+	</script>
+</body>
+<!-- <script src="client.js"></script> -->
+
+</html>

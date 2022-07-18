@@ -1,0 +1,129 @@
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: #ffffff;
+/* background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%); */
+
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.container{
+    width: 800px;
+    height: 400px;
+    background-color: white;
+
+
+    display: flex;
+    flex-direction: row;
+align-items: center;
+justify-content: center;
+}
+.left{
+    width: 30%;
+    height: 100%;
+    /* background-color: red; */
+    background-image: url("../static/image.jpg");
+    background-repeat: no-repeat;
+    background-size:contain;
+}
+.right{
+    width: 70%;
+    height: 100%;
+    /* background-color: rgb(69, 151, 206); */
+    padding: 12px;
+}
+.right h1{
+    /* background-color: aqua; */
+    text-align: center;
+
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 800;
+    font-size: 40px;
+line-height: 45px;
+/* identical to box height */
+
+
+color: #000000;
+}
+.right h2{
+    /* background-color: blueviolet; */
+    text-align: center;
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 30px;
+line-height: 45px;
+/* identical to box height */
+color: #3271ed;
+}
+.form-index{
+    /* background-color: chocolate; */
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    /* height: 100px; */
+    align-items: center;
+    /* justify-content: center; */
+}
+.form-index .place-hold{
+    background: #F0EFFF;
+border-radius: 8px;
+width: 369px;
+height: 62px;
+padding: 12px 20px;
+margin: 8px 0;
+box-sizing: border-box;
+outline: none;
+border: none;
+    /* displ */
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 15px;
+line-height: 22px;
+text-align: center;
+/* identical to box height */
+
+
+color: #A7A3FF;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.submit{
+    width: 369px;
+height: 62px;
+background: #00b670;;
+box-shadow: 0px 4px 61px rgba(77, 71, 195, 0.4);
+border-radius: 9px;
+
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 24px;
+/* identical to box height */
+
+
+color: #FFFFFF;
+
+}
+.submit:hover{
+    cursor: pointer;
+}
